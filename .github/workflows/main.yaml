@@ -30,9 +30,9 @@ jobs:
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-hello:latest
 
 
-deploy:
-  needs: build
-  runs-on: ubuntu-latest
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
   steps:
   - name: Install AWS CLI

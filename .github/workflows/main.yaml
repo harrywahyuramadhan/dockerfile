@@ -50,7 +50,7 @@ jobs:
     - name: Deploy Docker image to EC2
       run: |
         # SSH into the EC2 instance and run Docker commands
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
+        ssh -i ${{ secrets.EC2_SSH_KEY }} ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-hello:latest
           docker stop nginx-hello || true
           docker rm nginx-hello || true

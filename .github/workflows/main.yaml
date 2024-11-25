@@ -30,7 +30,7 @@ jobs:
         tags: ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-hello:latest
 
 
-deploy:
+  deploy:
   needs: build
   runs-on: ubuntu-latest
 
@@ -60,4 +60,3 @@ deploy:
         docker rm nginx-hello || true
         docker run -d -p 80:80 --name nginx-hello ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-hello:latest
       EOF
-

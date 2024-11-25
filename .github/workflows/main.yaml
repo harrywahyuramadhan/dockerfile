@@ -67,4 +67,3 @@ deploy:
         sudo docker rm nginx-hello || true
         sudo docker run -d -p 80:80 --name nginx-hello ${{ secrets.DOCKER_HUB_USERNAME }}/nginx-hello:latest
       EOF
-
